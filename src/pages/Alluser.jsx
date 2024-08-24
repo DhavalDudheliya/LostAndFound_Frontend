@@ -50,14 +50,14 @@ function AllUser() {
         setCoordinator(res.data.coordinator);
         setLoading(false);
       });
-  });
+  }, []);
 
   useEffect(() => {
     axios.post("/student/req", { status: "Active" }).then((res) => {
       setStudent(res.data.student);
       setLoading(false);
     });
-  });
+  }, []);
 
   const HandleCoordinatorDelete = async (user) => {
     setLoading(true);

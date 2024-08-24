@@ -41,6 +41,9 @@ function ListFounditems() {
         )
         .then(() => {
           toast.success("List Successfully");
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   };

@@ -29,7 +29,10 @@ function FoundItemsCoordinator() {
           setItem(dataWithIndex);
         }),
         setLoading(false)
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const ifQueryEmpty = async () => {
@@ -43,7 +46,10 @@ function FoundItemsCoordinator() {
           }));
           setItem(dataWithIndex);
         })
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSearch = async () => {
@@ -67,7 +73,10 @@ function FoundItemsCoordinator() {
           setItem(dataWithIndex);
         }),
         setLoading(false)
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleKeyPress = (event) => {

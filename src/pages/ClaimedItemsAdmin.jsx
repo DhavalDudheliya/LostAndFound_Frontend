@@ -25,6 +25,9 @@ function ClaimedItemsAdmin() {
         const data = res.data.items;
         setItem(data);
         setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
 

@@ -61,7 +61,7 @@ export default function AdminDashboard() {
     axios
       .get("/admin/getdept", { withCredentials: true })
       .then((response) => setAll(response.data.depts));
-  });
+  }, [navigate]);
 
   const handleDept = async (event) => {
     event.preventDefault();
@@ -75,7 +75,7 @@ export default function AdminDashboard() {
       )
       .then((response) => {
         if (response.data.message === "Department already Exists") {
-          toast.error("Coordinator already exists");
+          toast.error("Department already exists");
         }
       })
       .catch((error) => {

@@ -28,7 +28,10 @@ function StudentDashboard() {
       .get("/student/dashboard", {
         withCredentials: true,
       })
-      .then((response) => {});
+      .then((response) => {})
+      .catch((err) => {
+        console.log(err);
+      });
     axios
       .get("/student/getme", {
         withCredentials: true,
@@ -36,8 +39,11 @@ function StudentDashboard() {
       .then((response) => {
         setUser(response.data.userName);
         // setProfilePicture(response.data.profilePicture);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-  });
+  }, []);
 
   return (
     <>

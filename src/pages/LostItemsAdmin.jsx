@@ -25,6 +25,9 @@ function LostItemsAdmin() {
         const data = res.data.items;
         setItem(data);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -35,6 +38,9 @@ function LostItemsAdmin() {
         const data = res.data.items;
         setItem(data);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -51,6 +57,9 @@ function LostItemsAdmin() {
       .then((res) => {
         const data = res.data.items;
         setItem(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

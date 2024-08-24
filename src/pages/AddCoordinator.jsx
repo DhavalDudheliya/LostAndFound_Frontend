@@ -24,7 +24,7 @@ function AddCoordinator() {
       setAll(response.data.depts);
       setLoading(false);
     });
-  });
+  }, []);
 
   const handleSubmit = async (event, response) => {
     event.preventDefault();

@@ -116,6 +116,9 @@ function Summary() {
         const data = res.data.items;
         setItem(data);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
       });
     if (lostItem) {
       resetLostItem(true);

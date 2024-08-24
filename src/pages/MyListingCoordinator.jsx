@@ -28,6 +28,9 @@ function MyListingCoordinator() {
         const data = res.data.items;
         setItem(data);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -39,6 +42,9 @@ function MyListingCoordinator() {
       .then((res) => {
         const data = res.data.items;
         setItem(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -55,6 +61,9 @@ function MyListingCoordinator() {
       .then((res) => {
         const data = res.data.items;
         setItem(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

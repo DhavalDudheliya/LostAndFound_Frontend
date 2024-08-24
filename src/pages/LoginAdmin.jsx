@@ -18,8 +18,11 @@ function LoginAdmin() {
       .get("/admin/dashboard", {
         withCredentials: true,
       })
-      .then((response) => navigate("/admin/dashboard"));
-  });
+      .then((response) => navigate("/admin/dashboard"))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [navigate]);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -49,6 +52,9 @@ function LoginAdmin() {
             console.log(response.data.message);
             toast.error("Email and Password fields are invalid");
           }
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   };

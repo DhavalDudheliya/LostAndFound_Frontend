@@ -18,8 +18,11 @@ function LoginCoordinator() {
       .get("/coordinator/dashboard", {
         withCredentials: true,
       })
-      .then((response) => navigate("/coordinator/dashboard"));
-  });
+      .then((response) => navigate("/coordinator/dashboard"))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [navigate]);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -49,6 +52,9 @@ function LoginCoordinator() {
             console.log(response.data.message);
             toast.error("Email and Password fields are invalid");
           }
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   };

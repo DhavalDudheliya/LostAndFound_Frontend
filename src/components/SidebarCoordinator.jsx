@@ -23,8 +23,11 @@ function SideBarCoordinator() {
       })
       .then((response) => {
         setfirstNmae(response.data.firstName);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div className="navbar">

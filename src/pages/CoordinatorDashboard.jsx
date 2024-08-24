@@ -50,12 +50,11 @@ function CoordinatorDashboard() {
       })
       .then((response) => {
         setUser(response.data.userName);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    // fetch("http://localhost:8000/coordinator/getme")
-    //   .then((res) => res.json())
-    //   .then((data) => setUserName(data.userName))sss
-    //   .catch((err) => console.log(err));
-  });
+  }, [navigate]);
 
   return (
     <>

@@ -44,27 +44,37 @@ function FoundItemsCoordinator() {
   };
 
   useEffect(() => {
-    axios.all([axios.get(`/coordinator/getFoundItems`)]).then(
-      axios.spread((res1) => {
-        const dataWithIndex = res1.data.items.map((itemData, index) => ({
-          ...itemData,
-          index: index + 1,
-        }));
-        setItem(dataWithIndex);
-      }, setLoading(false))
-    );
+    axios
+      .all([axios.get(`/coordinator/getFoundItems`)])
+      .then(
+        axios.spread((res1) => {
+          const dataWithIndex = res1.data.items.map((itemData, index) => ({
+            ...itemData,
+            index: index + 1,
+          }));
+          setItem(dataWithIndex);
+        }, setLoading(false))
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   }, [count]);
 
   const ifQueryEmpty = async () => {
-    axios.all([axios.get(`/coordinator/getFoundItems`)]).then(
-      axios.spread((res1) => {
-        const dataWithIndex = res1.data.items.map((itemData, index) => ({
-          ...itemData,
-          index: index + 1,
-        }));
-        setItem(dataWithIndex);
-      })
-    );
+    axios
+      .all([axios.get(`/coordinator/getFoundItems`)])
+      .then(
+        axios.spread((res1) => {
+          const dataWithIndex = res1.data.items.map((itemData, index) => ({
+            ...itemData,
+            index: index + 1,
+          }));
+          setItem(dataWithIndex);
+        })
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSearch = async () => {
@@ -83,7 +93,10 @@ function FoundItemsCoordinator() {
           }));
           setItem(dataWithIndex);
         })
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleKeyPress = (event) => {

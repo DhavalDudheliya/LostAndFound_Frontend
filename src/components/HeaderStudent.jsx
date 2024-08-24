@@ -13,7 +13,10 @@ function Header() {
       .get("/student/logout", {
         withCredentials: true,
       })
-      .then((response) => navigate("/student/login"));
+      .then((response) => navigate("/student/login"))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

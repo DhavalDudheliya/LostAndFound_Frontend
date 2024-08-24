@@ -36,7 +36,7 @@ function DashAdmin() {
       setTotalCurrentLostItems(response.data.totalCurrentLostItems);
       setLoading(false);
     });
-  });
+  }, []);
 
   return (
     <>

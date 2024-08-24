@@ -21,8 +21,11 @@ function SideBarAdmin() {
   useEffect(() => {
     axios
       .get("/admin/getdept", { withCredentials: true })
-      .then((response) => setAll(response.data.depts));
-  });
+      .then((response) => setAll(response.data.depts))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handleDept = async (event) => {
     event.preventDefault();

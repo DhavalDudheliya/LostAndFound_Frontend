@@ -33,7 +33,10 @@ function MyListingStudent() {
           }));
           setItem(dataWithIndex);
         }, setLoading(false))
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const ifQueryEmpty = async () => {
@@ -51,7 +54,10 @@ function MyListingStudent() {
           }));
           setItem(dataWithIndex);
         })
-      );
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSearch = async () => {
@@ -74,7 +80,10 @@ function MyListingStudent() {
             }));
             setItem(dataWithIndex);
           })
-        );
+        )
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 

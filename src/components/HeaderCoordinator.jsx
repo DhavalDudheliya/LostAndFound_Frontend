@@ -13,7 +13,10 @@ function Header() {
       .get("/coordinator/logout", {
         withCredentials: true,
       })
-      .then((response) => navigate("/coordinator/login"));
+      .then((response) => navigate("/coordinator/login"))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
