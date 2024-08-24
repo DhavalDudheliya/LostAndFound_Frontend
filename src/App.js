@@ -12,7 +12,8 @@ import StudentDashboard from "./pages/StudentDashboard";
 import SelectRole from "./pages/SelectRole";
 import AddCoordinator from "./pages/AddCoordinator";
 import CoordinatorDashboard from "./pages/CoordinatorDashboard";
-import * as myContants from "../myConstants";
+import * as myContants from "./myConstants";
+
 axios.defaults.baseURL = myContants.BACKEND_URL;
 axios.defaults.withCredentials = true;
 
